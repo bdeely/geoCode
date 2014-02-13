@@ -1,9 +1,9 @@
 from pygeocoder import Geocoder
 
 #opens original file
-f = open("ORIGINAL_FILE.txt", "r")
+orig = open("ORIGINAL_FILE.txt", "r")
 #creates new file
-n = open("NEW_FILE.txt", "w")
+new = open("NEW_FILE.txt", "w")
 
 cities = []
 
@@ -31,9 +31,3 @@ print(results[0].coordinates)
 for city in cities:
   results = Geocoder.geocode(city)
   n.write(city+","+str(results[0].coordinates)+"\n")
-
-
-#for testing the printout, we can tell it to test on just 2 items
-#for city in cities[:2]:
-#results = Geocoder.geocode(city)
-#n.write(city+","+str(results[0].coordinates)+"\n")
