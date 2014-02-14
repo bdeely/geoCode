@@ -1,9 +1,9 @@
 from pygeocoder import Geocoder
 
 #opens original file
-orig = open("ORIGINAL_FILE.txt", "r")
+f = open("SpendingALL.txt", "r")
 #creates new file
-new = open("NEW_FILE.txt", "w")
+n = open("SpendingALLGeo.txt", "w")
 
 cities = []
 
@@ -29,5 +29,9 @@ print(results[0].coordinates)
 
 #polish it off by putting the cities with their geo-coordinates
 for city in cities:
-  results = Geocoder.geocode(city)
-  n.write(city+","+str(results[0].coordinates)+"\n")
+  try:
+    results = Geocoder.geocode(city)
+    output = city+","+str(results[0].coordinates)+"\n"
+  except:
+    output = "None"
+  n.write(output)
