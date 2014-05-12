@@ -1,9 +1,9 @@
 from pygeocoder import Geocoder
 
 #opens original file
-f = open("SpendingALL.txt", "r")
+f = open("OrigFileNAME.txt", "r")
 #creates new file
-n = open("SpendingALLGeo.txt", "w")
+n = open("NewFileNAME.txt", "w")
 
 cities = []
 
